@@ -5,7 +5,7 @@ from os.path import join, dirname, realpath, exists
 import tensorflow as tf
 
 tf.app.flags.DEFINE_string('oplib_name', 'aster', 'Name of op library.')
-tf.app.flags.DEFINE_string('oplib_suffix', '.so', 'Library suffix.')
+tf.app.flags.DEFINE_string('oplib_suffix', '.dylib', 'Library suffix.')
 FLAGS = tf.app.flags.FLAGS
 
 

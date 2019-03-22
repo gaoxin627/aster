@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 project(aster)
 
+set(CMAKE_MACOSX_RPATH 1)
+
 # compiler flags
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 ${OpenMP_CXX_FLAGS} -Wall -fPIC -D_GLIBCXX_USE_CXX11_ABI=0")
 
