@@ -17,6 +17,7 @@ flags = tf.app.flags
 flags.DEFINE_string('exp_dir', 'aster/experiments/demo/',
                     'Directory containing config, training log and evaluations')
 flags.DEFINE_string('input_image', 'aster/data/demo.jpg', 'Demo image')
+flags.DEFINE_string('rectified_image', 'aster/data/rectified_image.jpg', 'Rectified image')
 FLAGS = flags.FLAGS
 
 
@@ -83,8 +84,9 @@ def main(_):
   
   rectified_image = sess_outputs['rectified_images'][0]
   rectified_image_pil = Image.fromarray((128 * (rectified_image + 1.0)).astype(np.uint8))
-  input_image_dir = os.path.dirname(FLAGS.input_image)
-  rectified_image_save_path = os.path.join(input_image_dir, 'rectified_image.jpg')
+  # input_image_dir = os.path.dirname(FLAGS.input_image)
+  # rectified_image_save_path = os.path.join(input_image_dir, 'rectified_image.jpg')
+  rectified_image_save_path = FLAGS.rectified_image
   rectified_image_pil.save(rectified_image_save_path)
   print('Rectified image saved to {}'.format(rectified_image_save_path))
 
